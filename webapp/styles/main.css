@@ -105,3 +105,9 @@ to prevent collapsing during animation*/
   -moz-transform:translate3d(100px, 0, 0);
   transform:translate3d(100px, 0, 0);
 }
+
+#map-canvas {
+  height: 500px;
+  margin: 0px;
+  padding: 0px
+}
