@@ -14,7 +14,6 @@ price_matchers = [
     general_two_digit
 ]
 
-# number_year -> DONT take those ones
 def get_prices(text):
     """ Given text, returns a list of floats of prices found in the text """
     output = []
@@ -23,7 +22,6 @@ def get_prices(text):
         unformatted_prices.extend(regex.findall(text))
 
     for price_tuple in unformatted_prices:
-        # e.g. [('5.00', '.00'), ...]
         try:
             price = general.findall(price_tuple)[0]
             p = float(price)

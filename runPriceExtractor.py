@@ -2,7 +2,7 @@ import pandas as pd
 import extract_prices
 import re
 
-df = pd.read_csv('escort_all_sampled.csv', nrows=80000)
+df = pd.read_csv('escort_all_sampled.csv', nrows=100)
 
 testForAnyNumber = re.compile('[0-9]{1,10}')
 
