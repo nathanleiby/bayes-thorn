@@ -2,17 +2,9 @@
 
 app.controller('clusterCtrl', function($scope, DataParser){
   DataParser.readFile('data/links_trim.csv').then(function(results) {
-    var points = _.map(results, function(line, i) {
-      return {
-        endPoints: [
-          new google.maps.LatLng(line.lat1, line.lng1),
-          new google.maps.LatLng(line.lat2, line.lng2),
-        ],
-        weight: 10 * Number(line.weight)
-      }
-    });
 
-    function initialize(pointVals) {
+    // console.log(points)
+    function initialize() {
       var mapOptions = {
         zoom: 4,
         center: new google.maps.LatLng(39.8282, -98.5795),
@@ -23,43 +15,60 @@ app.controller('clusterCtrl', function($scope, DataParser){
       var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
-      _.each(pointVals, function(point) {
-        var line = new google.maps.Polyline({
-          path: point.endPoints,
-          geodesic: true,
-          strokeColor: '#FCFF00',
-          strokeOpacity: 0.7,
-          strokeWeight: point.weight
-        });
-        line.setMap(map);
-      });
-
       // Chloropleth (states with colors)
       var polys = [];
-      jQuery.get("data/states.xml", {}, function(data) {
-        jQuery(data).find("state").each(function() {
-          console.log("state", this)
-          var colour = this.getAttribute('colour');
-          var points = this.getElementsByTagName("point");
+      var cluster_to_color = {
+        0 : '#f000000',
+        1 : '#00f000',
+        2 : '#0000f0',
+        3 : '#700000',
+        4 : '#007000',
+        5 : '#000070',
+        6 : '#700000',
+        7 : '#007000',
+        8 : '#000070',
+        9 : '#000070',
+        10 : '#f000000',
+        11 : '#00f000',
+        12 : '#0000f0',
+        13 : '#700000',
+        14 : '#007000',
+        15 : '#000070',
+        16 : '#700000',
+      };
+
+      jQuery.get("data/states_updated.json", {}, function(data) {
+        // console.log("got data")
+        for (var state_idx = 0; state_idx < data['states'].length; state_idx++) {
+          var state = data['states'][state_idx];
+          // console.log("state", state)
+          var colour = state['colour'];
+          var clusterId = state['cluster_id'];
+          var points = state['point'];
           var pts = [];
           for (var i = 0; i < points.length; i++) {
-            pts[i] = new google.maps.LatLng(parseFloat(points[i].getAttribute("lat")), parseFloat(points[i].getAttribute("lng")));
+            pts[i] = new google.maps.LatLng(parseFloat(points[i]["lat"]), parseFloat(points[i]["lng"]));
+          }
+          var fill_color = '#000000';
+          if (cluster_to_color[clusterId]) {
+            // console.log("clusterToColor");
+            fill_color = cluster_to_color[clusterId];
           }
           var poly = new google.maps.Polygon({
             paths: pts,
             strokeColor: '#000000',
             strokeOpacity: 1,
             strokeWeight: .3,
-            fillColor: colour,
+            fillColor: fill_color,
             fillOpacity: 0.35
           });
           polys.push(poly);
           poly.setMap(map);
-        });
+        }
       });
 
     }
-    initialize(points);
+    initialize();
   });
 })
 
