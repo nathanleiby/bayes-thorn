@@ -3,7 +3,7 @@
 var app = angular.module('bayesImpactTrafficking', [
 	'ui.router',
 	'ngAnimate',
-  'leaflet-directive',
+  'react',
   'd3',
   'DataParser',
 ]);
@@ -16,19 +16,15 @@ app.config(function($stateProvider, $urlRouterProvider){
           controller: 'CrimesCtrl',
           templateUrl: 'views/crimes.html'
       })
-      .state("policeBeats", {
-          url: "/policebeats",
-          controller: 'PoliceBeatsCtrl',
-          templateUrl: 'views/policebeats.html'
+      .state("cities", {
+          url: "/cities",
+          controller: 'citiesCtrl',
+          templateUrl: 'views/cities.html'
       })
       .state('ages', {
         url: '/ages',
         controller: 'AgesCtrl',
         templateUrl: 'views/ages.html'
-      })
-      .state('salaries', {
-        url: '/salaries',
-        templateUrl: 'views/salaries.html'
       })
 
   $urlRouterProvider.otherwise("/crimes");
