@@ -51,14 +51,24 @@ def spectral_cluster(names, X):
         print ','.join(names[membership == i])
 
 names, X = load_data()
-spectral = cluster.SpectralClustering(n_clusters=17,
+ga_ind = np.flatnonzero(names == 'GA')
+me_ind = np.flatnonzero(names == 'ME')
+X[ga_ind, me_ind] = 0. #hackityhackhackhack
+X[me_ind, ga_ind] = 0.
+spectral = cluster.SpectralClustering(n_clusters=16,
                                       eigen_solver='arpack',
                                       affinity="precomputed")
 spectral.fit(X)
 spectral.labels_
+print ''
 for label in np.unique(spectral.labels_):
-    print label
-    print names[spectral.labels_ == label]
+    clust = names[spectral.labels_ == label]
+    for cl in clust:
+        if cl == clust[-1]:
+            print cl,
+        else:
+            print cl +  ",",
+    print ''
 
 if __name__ == "__main__":
     spectral_cluster(names, X)

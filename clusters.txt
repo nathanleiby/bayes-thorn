@@ -1,0 +1,16 @@
+KS, MO, OK 
+AZ, CA, CO, NV 
+IN, KY, MI, OH 
+AR, MN, ND, TN 
+DC, MD, VA 
+IA, NE 
+DE, NJ, NY, PA 
+NC, SC 
+AL, FL, GA 
+CT, MA, RI 
+MT, SD, WY 
+LA, NM, TX 
+ID, MS, UT 
+IL, WI 
+ME, NH, VT, WV 
+OR, WA 
