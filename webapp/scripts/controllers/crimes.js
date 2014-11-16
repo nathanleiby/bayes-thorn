@@ -34,7 +34,7 @@ var groupCrimesByDate = function(sortedCrimes){
     })
 }
 
-angular.module('oakCrimeApp')
+angular.module('bayesImpactTrafficking')
   .controller('CrimesCtrl', function ($scope, $http) {
 
   	// get and format crime data

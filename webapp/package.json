@@ -1,21 +1,21 @@
 {
-  "name": "oakCrime",
+  "name": "bayesImpactTrafficking",
   "version": "0.0.0",
-  "description": "oakCrime ======",
+  "description": "bayesImpactTrafficking ======",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jasonshark/oakCrime.git"
+    "url": "https://github.com/nathanleiby/bayes-thorn"
   },
-  "author": "Connor Leech",
-  "license": "ISC",
+  "author": "Adam Fishman",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jasonshark/oakCrime/issues"
+    "url": "https://github.com/nathanleiby/bayes-thorn"
   },
-  "homepage": "https://github.com/jasonshark/oakCrime",
+  "homepage": "https://github.com/nathanleiby/bayes-thorn",
   "devDependencies": {
     "gulp": "^3.8.7",
     "gulp-connect": "^2.0.6",

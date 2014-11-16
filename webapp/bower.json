@@ -1,16 +1,19 @@
 {
-  "name": "oakCrime",
+  "name": "bayesImpactTrafficking",
   "version": "0.0.0",
-  "homepage": "https://github.com/jasonshark/oakCrime",
+  "homepage": "https://github.com/nathanleiby/bayes-thorn",
   "authors": [
-    "Connor James Leech <connorleech@gmail.com>"
+    "Adam Fishman",
+    "Nathan Leiby",
+    "Ben Segal",
+    "Dan Frank",
+    "Scott McKinney"
   ],
   "description": "oakland crime data visualizations",
   "keywords": [
-    "oakland",
+    "trafficking",
     "crime",
     "data",
-    "d3",
     "visualization"
   ],
   "license": "MIT",

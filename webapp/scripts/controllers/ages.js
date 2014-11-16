@@ -2,8 +2,8 @@
 app.controller('AgesCtrl', function($scope, DataParser){
 
 	DataParser.readFile('data/ages.csv').then(function(results){
-		var ages = _.map(results, function(award, i){
-			return award
+		var ages = _.map(results, function(age, i){
+			return age
 		});
 
     ages = _.sortBy(ages, function(ageVal){ return ageVal['Age']});

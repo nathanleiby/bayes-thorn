@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('oakCrimeApp', [
+var app = angular.module('bayesImpactTrafficking', [
 	'ui.router',
 	'ngAnimate',
   'leaflet-directive',
@@ -21,10 +21,10 @@ app.config(function($stateProvider, $urlRouterProvider){
           controller: 'PoliceBeatsCtrl',
           templateUrl: 'views/policebeats.html'
       })
-      .state('awards', {
-        url: '/awards',
+      .state('ages', {
+        url: '/ages',
         controller: 'AgesCtrl',
-        templateUrl: 'views/awards.html'
+        templateUrl: 'views/ages.html'
       })
       .state('salaries', {
         url: '/salaries',
