@@ -3,7 +3,6 @@
 var app = angular.module('bayesImpactTrafficking', [
 	'ui.router',
 	'ngAnimate',
-  'react',
   'd3',
   'DataParser',
 ]);
