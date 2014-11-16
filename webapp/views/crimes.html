@@ -1,0 +1,38 @@
+	<div line-chart
+		val='crimes'
+		current-day='currentDay'
+		class='col-md-8'></div>
+	<div class='crime-list-header col-md-4' ng-if='!currentDay'>
+		<h3>Click on a dot to view crimes commited that day</h3>
+	</div>
+	<div class='crime-list-header crime-list-wrapper col-md-3' ng-if='currentDay'>
+		<h3>{{ currentDay.date }}, 2014</h3>
+		<b>Crimes commited:</b> {{ currentDay.numCrimes }}
+		<h4>Crimes:</h4>
+
+    <div class='crime-list'>
+      <div ng-repeat='crime in currentDay.crimeList'>
+        <div class='label label-danger'>{{ crime.crimetype }}</div>
+        <dl>
+          <dt>Case Number: </dt>
+          <dd>{{ crime.casenumber }}</dd>
+          <dt>Police beat:</dt>
+          <dd>{{ crime.policebeat }}</dd>
+          <dt>Description:</dt>
+          <dd>{{ crime.description }}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+<!--
+Total crimes:
+<pre>{{ crimes | json }}</pre>
+ -->
+
+<!--
+
+http://odetocode.com/blogs/scott/archive/2014/05/29/building-multiple-filters-with-lo-dash-and-angularjs.aspx
+<select ng-model='selectedCrime' ng-options='crime for crime in crimes'></select>
+
+-->

@@ -1,0 +1,76 @@
+<!doctype html>
+<html ng-app="oakCrimeApp" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>oakCrime</title>
+
+    <!-- Necessary for Github Pages
+    <base href='/oakCrime/' />
+    -->
+    <meta name="description" content="oakland crime data open data visualization d3">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- endinject -->
+    <link rel="stylesheet" href="styles/base_style.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+    </p>
+    <![endif]-->
+
+
+
+    <div class="navbar navbar-default navbar-fixed-top"
+      ng-include="'views/partials/nav.html'">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="span12 ui-view-container">
+          <div class='viewContain' ui-view></div>
+        </div>
+      </div>
+    </div>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- bower:js -->
+    <script src="http://fb.me/react-with-addons-0.12.0.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.0.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="/bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="/bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endinject -->
+
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src='scripts/togeojson.js'></script>
+    <script src="scripts/app.js"></script>
+
+    <script src="scripts/services/d3.js"></script>
+    <script src='scripts/services/dataParser.js'></script>
+    <script src='scripts/controllers/policeBeats.js'></script>
+    <script src='scripts/controllers/headerController.js'></script>
+    <script src="scripts/controllers/crimes.js"></script>
+    <script src='scripts/controllers/awards.js'></script>
+    <script src="scripts/directives/lineChart.js"></script>
+    <script src="scripts/directives/barChart.js"></script>
+  </body>
+</html>
