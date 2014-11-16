@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('citiesCtrl', function($scope, DataParser){
+app.controller('clusterCtrl', function($scope, DataParser){
   DataParser.readFile('data/links_trim.csv').then(function(results) {
     var points = _.map(results, function(line, i) {
       return {
