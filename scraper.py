@@ -14,8 +14,6 @@ df['postAge'] = df['postAge'].convert_objects(convert_numeric=True)
 
 def parse_backpage_url(url, seen_urls=[]):
     """crawl all posts by this user"""
-    if url in seen_urls:
-        return {}
     url_parsed = urlparse(url)
     url_city = url_parsed.netloc.split('.')[0]
     html = urllib2.urlopen(url)
@@ -28,13 +26,20 @@ def parse_backpage_url(url, seen_urls=[]):
     prices = extract_prices.get_prices(post_text)
     seen_urls.append(url)
 
-    stats = {'url_cities': url_city,
-             'post_ages': post_age,
-             'post_texts': post_text,
+
+
+    stats = {'url_cities': [url_city],
+             'post_ages': [post_age],
+             'post_texts': [post_text],
              'post_links': post_links,
              'post_prices': prices}
-    # for post_link in post_links:
-    #     if post_link in seen_urls:
-    #         continue
+
+    for post_link in post_links:
+        if post_link in seen_urls:
+            continue
+        new_stats = parse_backpage_url(post_link, seen_urls=seen_urls)
+        seen_urls.append(post_link)
+        for k, v in new_stats.iteritems():
+            stats[k] = stats[k] + new_stats[k]
 
     return stats
