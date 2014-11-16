@@ -33,31 +33,6 @@ app.controller('citiesCtrl', function($scope, DataParser){
         });
         line.setMap(map);
       });
-
-      // Chloropleth (states with colors)
-      var polys = [];
-      jQuery.get("data/states.xml", {}, function(data) {
-        jQuery(data).find("state").each(function() {
-          console.log("state", this)
-          var colour = this.getAttribute('colour');
-          var points = this.getElementsByTagName("point");
-          var pts = [];
-          for (var i = 0; i < points.length; i++) {
-            pts[i] = new google.maps.LatLng(parseFloat(points[i].getAttribute("lat")), parseFloat(points[i].getAttribute("lng")));
-          }
-          var poly = new google.maps.Polygon({
-            paths: pts,
-            strokeColor: '#000000',
-            strokeOpacity: 1,
-            strokeWeight: .3,
-            fillColor: colour,
-            fillOpacity: 0.35
-          });
-          polys.push(poly);
-          poly.setMap(map);
-        });
-      });
-
     }
     initialize(points);
   });

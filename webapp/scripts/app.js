@@ -21,5 +21,5 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: 'views/clusters.html'
       })
 
-  $urlRouterProvider.otherwise("/crimes");
+  $urlRouterProvider.otherwise("/cities");
 });
