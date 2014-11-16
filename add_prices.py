@@ -1,7 +1,7 @@
 import ipdb
 import pandas as pd
 import numpy
-from extract_prices import get_prices
+import extract_prices
 
 # Display options
 pd.set_option("display.height", 20)
@@ -21,16 +21,17 @@ print "Done loading data."
 # criterion = lambda row: has_price(row['postText']) or has_price(row['postTitle'])
 # df_filtered = df[df.apply(criterion, axis=1)]
 
-def get_avg_price(text):
-  try:
-    prices = get_prices(text)
-  except:
-    return 0
 
-  if len(prices) == 0:
-    return 0
-  else:
-    return numpy.mean(prices)
+def get_avg_price(text):
+    try:
+        prices = get_prices(text)
+    except:
+        return 0
+
+    if len(prices) == 0:
+        return 0
+    else:
+        return numpy.mean(prices)
 
 print "Computing price..."
 df['computedPrice'] = df['postText'].map(lambda x: get_avg_price(x))
