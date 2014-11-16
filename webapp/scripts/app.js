@@ -26,10 +26,6 @@ app.config(function($stateProvider, $urlRouterProvider){
         controller: 'AgesCtrl',
         templateUrl: 'views/ages.html'
       })
-      .state('salaries', {
-        url: '/salaries',
-        templateUrl: 'views/salaries.html'
-      })
 
   $urlRouterProvider.otherwise("/crimes");
 });
