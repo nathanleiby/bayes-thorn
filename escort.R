@@ -1,4 +1,4 @@
-data.file <- '/Users/scott/Desktop/bayes/data/escort_all/escort_all_10percent.csv'
+data.file <- '/Users/scott/Desktop/bayes/data/escort_all/escort_10percent_phone.csv'
 #data.file <- '/Users/scott/Desktop/bayes/github/bayes-thorn/escort_all_sampled_prices.csv'
 #data.file <- '/Users/scott/Desktop/bayes/data/escort_all/escort_50k_pd.csv'
 #data.prices <- read.csv(file=data.file, header=TRUE, fill=TRUE)
