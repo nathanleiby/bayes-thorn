@@ -1,16 +1,50 @@
-KS, MO, OK 
-AZ, CA, CO, NV 
-IN, KY, MI, OH 
-AR, MN, ND, TN 
-DC, MD, VA 
-IA, NE 
-DE, NJ, NY, PA 
-NC, SC 
-AL, FL, GA 
-CT, MA, RI 
-MT, SD, WY 
-LA, NM, TX 
-ID, MS, UT 
-IL, WI 
-ME, NH, VT, WV 
-OR, WA 
+KS,1
+MO,1
+OK,1 
+AZ,2
+CA,2
+CO,2
+NV,2 
+IN,3
+KY,3
+MI,3
+OH,3
+AR,4
+MN,4
+ND,4
+TN,4 
+DC,5
+MD,5
+VA,5
+IA,6
+NE,6
+DE,7
+NJ,7
+NY,7
+PA,7 
+NC,8
+SC,8 
+AL,9
+FL,9
+GA,9
+CT,10
+MA,10 
+RI,10 
+MT,11
+SD,11
+WY,11
+LA,12
+NM,12
+TX,12 
+ID,13
+MS,13
+UT,13 
+IL,14
+WI,14 
+ME,15
+NH,15
+VT,15
+WV,15 
+OR,16
+WA,16 
+nan,17
